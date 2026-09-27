@@ -1,0 +1,37 @@
+import { SUPPORTED_LOCALES, resolveLocale, translate } from './locale.js';
+
+const storageKey = 'knowhy.games.language';
+const listeners = new Set();
+let saved = null;
+try { saved = localStorage.getItem(storageKey); } catch { /* Private storage may be unavailable. */ }
+let locale = resolveLocale(saved, navigator.language);
+
+export function getLocale() { return locale; }
+export function t(key, params) { return translate(locale, key, params); }
+export function onLocaleChange(listener) {
+  listeners.add(listener);
+  return () => listeners.delete(listener);
+}
+
+function applyLocale() {
+  document.documentElement.lang = locale;
+  document.title = t(document.body.dataset.page === 'detail' ? 'detailTitleMeta' : 'homeTitleMeta');
+  document.querySelector('meta[name="description"]')?.setAttribute('content', t(document.body.dataset.page === 'detail' ? 'detailDescriptionMeta' : 'homeDescriptionMeta'));
+  document.querySelectorAll('[data-i18n]').forEach((node) => { node.textContent = t(node.dataset.i18n); });
+  document.querySelectorAll('[data-i18n-aria]').forEach((node) => { node.setAttribute('aria-label', t(node.dataset.i18nAria)); });
+  document.querySelectorAll('[data-i18n-alt]').forEach((node) => { node.setAttribute('alt', t(node.dataset.i18nAlt)); });
+  document.querySelectorAll('[data-language-select]').forEach((node) => { node.value = locale; });
+}
+
+export function setLocale(nextLocale) {
+  if (!SUPPORTED_LOCALES.includes(nextLocale) || nextLocale === locale) return;
+  locale = nextLocale;
+  try { localStorage.setItem(storageKey, locale); } catch { /* Keep this page usable without storage. */ }
+  applyLocale();
+  listeners.forEach((listener) => listener(locale));
+}
+
+document.querySelectorAll('[data-language-select]').forEach((node) => {
+  node.addEventListener('change', (event) => setLocale(event.target.value));
+});
+applyLocale();

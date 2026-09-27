@@ -1,9 +1,20 @@
+import { t, onLocaleChange } from './site-i18n.js';
+
 const endpoint = String(window.CLASSROOM_SCORE_API || '').replace(/\/$/, '');
 const tabs = [...document.querySelectorAll('[data-tier]')];
 const status = document.getElementById('status');
 const scores = document.getElementById('scores');
 let tier = 'normal';
 let requestId = 0;
+let statusKey = 'boardLoading';
+let statusParams = {};
+
+function setStatus(key, state, params = {}) {
+  statusKey = key;
+  statusParams = params;
+  status.dataset.state = state;
+  status.textContent = t(key, params);
+}
 
 function renderPlaceholderRows() {
   scores.replaceChildren();
@@ -22,11 +33,9 @@ function renderPlaceholderRows() {
 async function loadScores() {
   const id = ++requestId;
   renderPlaceholderRows();
-  status.dataset.state = 'loading';
-  status.textContent = '正在读取榜单…';
+  setStatus('boardLoading', 'loading');
   if (!endpoint) {
-    status.dataset.state = 'error';
-    status.textContent = '榜单服务尚未接通，名次席位暂时空着。';
+    setStatus('boardOffline', 'error');
     return;
   }
   try {
@@ -36,8 +45,7 @@ async function loadScores() {
     if (id !== requestId) return;
     if (!Array.isArray(data.rows)) throw new Error('invalid response');
     if (data.rows.length === 0) {
-      status.dataset.state = 'empty';
-      status.textContent = '暂无上榜成绩，前排席位等你来占。';
+      setStatus('boardEmpty', 'empty');
       return;
     }
     scores.replaceChildren();
@@ -50,12 +58,10 @@ async function loadScores() {
       });
       scores.append(row);
     });
-    status.dataset.state = 'ready';
-    status.textContent = `当前已上榜 ${data.rows.length} 位`;
+    setStatus('boardCount', 'ready', { count: data.rows.length });
   } catch {
     if (id !== requestId) return;
-    status.dataset.state = 'error';
-    status.textContent = '暂时无法读取榜单，名次席位暂时空着。';
+    setStatus('boardError', 'error');
   }
 }
 
@@ -64,6 +70,7 @@ tabs.forEach((tab) => tab.addEventListener('click', () => {
   tabs.forEach((item) => item.setAttribute('aria-selected', String(item === tab)));
   loadScores();
 }));
+onLocaleChange(() => { status.textContent = t(statusKey, statusParams); });
 document.addEventListener('visibilitychange', () => {
   if (!document.hidden) loadScores();
 });

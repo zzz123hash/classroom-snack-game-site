@@ -4,3 +4,5 @@ wrangler.jsonc
 .gitignore
 .git/**
 .wrangler/**
+tests/**
+vendor/**

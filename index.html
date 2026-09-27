@@ -3,47 +3,52 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="KNOWHY GAMES 的独立游戏作品目录。了解《课堂偷吃》的玩法，并前往游戏平台游玩。" />
-  <meta name="theme-color" content="#bfe9ff" />
+  <meta name="description" content="认识 KNOWHY GAMES 的独立游戏作品，了解《课堂偷吃》并选择游戏平台。" />
+  <meta name="theme-color" content="#f4efe3" />
   <title>KNOWHY GAMES · 游戏作品</title>
   <link rel="stylesheet" href="./styles.css" />
-  <script type="importmap">{ "imports": { "three": "./vendor/three.module.js" } }</script>
 </head>
-<body>
-  <canvas id="world" aria-hidden="true"></canvas>
+<body data-page="home">
   <header class="nav">
-    <a class="brand" href="./">◆ KNOWHY GAMES</a>
-    <nav class="nav-links" aria-label="主导航">
-      <a href="#games">游戏作品</a>
-      <a href="#studio">关于</a>
-      <a href="https://knowhy.net/">KNOWHY ↗</a>
-      <button id="daynight" class="daynight" type="button" aria-label="切换昼夜外观">☀ 白天</button>
+    <a class="brand" href="./"><span class="brand-mark" aria-hidden="true">◆</span> KNOWHY GAMES</a>
+    <nav class="nav-links" aria-label="主导航" data-i18n-aria="navMain">
+      <a href="#games" data-i18n="navGames">游戏作品</a>
+      <a href="#studio" data-i18n="navAbout">关于</a>
+      <a class="nav-parent" href="https://knowhy.net/">KNOWHY ↗</a>
+      <label class="language-wrap"><span class="visually-hidden" data-i18n="navLanguage">网站语言</span><select class="language-select" data-language-select aria-label="网站语言" data-i18n-aria="navLanguage"><option value="zh-CN">中文</option><option value="en">English</option><option value="ja">日本語</option><option value="ko">한국어</option><option value="es">Español</option><option value="pt-BR">Português</option><option value="fr">Français</option><option value="de">Deutsch</option></select></label>
+      <button id="daynight" class="daynight" type="button" aria-label="切换昼夜外观" data-i18n-aria="themeDay">☀ 白天</button>
     </nav>
   </header>
   <main>
     <section class="hero">
-      <div class="hero-card">
-        <p class="eyebrow">一个放游戏的地方 · KNOWHY GAMES</p>
-        <h1 class="hero-title">下一局，<br>从这里开始。</h1>
-        <p class="hero-sub">我们把有趣的小想法做成能亲手体验的游戏。在这里认识作品，再前往游戏平台游玩。</p>
-        <div class="hero-actions"><a class="btn" href="#games">看看游戏 <span aria-hidden="true">↓</span></a><span class="hint">本站不内嵌游戏</span></div>
+      <div class="hero-inner">
+        <div class="hero-copy">
+          <p class="eyebrow" data-i18n="homeEyebrow">KNOWHY GAMES / 小游戏工作室</p>
+          <h1 class="hero-title" data-i18n="homeTitle">小小一局，玩出大动静。</h1>
+          <p class="hero-sub" data-i18n="homeLead">偷偷吃一口，留神老师的视线。每个收手的时机，都由你决定。</p>
+          <a class="btn" href="#games" data-i18n="homeExplore">看看游戏 ↓</a>
+        </div>
+        <a class="hero-art" href="./classroom-snacks/" aria-label="查看《课堂偷吃》详情" data-i18n-aria="gameMore">
+          <img src="./menu-key-art-v1.png" width="944" height="1678" alt="《课堂偷吃》插画：学生在教室里偷偷吃零食" data-i18n-alt="homeImageAlt" fetchpriority="high" />
+          <span class="art-caption" data-i18n="homeArtCaption">本期作品 · 课堂偷吃</span>
+        </a>
       </div>
     </section>
     <section id="games" class="games">
-      <div class="section-head"><p class="kicker">[ 游戏作品 ]</p><h2>先来一局课堂偷吃</h2></div>
+      <div class="section-head"><p class="kicker" data-i18n="gamesKicker">游戏作品</p><h2 data-i18n="gamesTitle">先认识这一款</h2></div>
       <div class="game-grid">
-        <a class="game game-feature" href="./classroom-snacks/" aria-label="查看《课堂偷吃》详情">
-          <div class="g-tile"><img src="./classroom.png" width="390" height="844" alt="《课堂偷吃》教室游玩画面" loading="lazy"></div>
-          <div class="game-copy"><span class="g-tag">单人 · 轻策略 · 试玩中</span><h3>课堂偷吃</h3><p>铃声响起，老师开始巡逻。挑零食、抓空档、及时收手，在下课前把肚子填饱。</p><span class="game-more">了解玩法与游玩入口 <span aria-hidden="true">→</span></span></div>
+        <a class="game game-feature" href="./classroom-snacks/" aria-label="查看《课堂偷吃》详情" data-i18n-aria="gameMore">
+          <div class="g-tile"><img src="./classroom.png" width="390" height="844" alt="《课堂偷吃》的教室游玩画面" data-i18n-alt="detailImageAlt" loading="lazy"></div>
+          <div class="game-copy"><span class="g-tag" data-i18n="gameTag">单人 · 轻策略 · 试玩中</span><h3 data-i18n="gameTitle">课堂偷吃</h3><p data-i18n="gameDescription">铃声响起，老师开始巡逻。挑零食、抓空档、及时收手，别让老师发现。</p><span class="game-more" data-i18n="gameMore">查看游戏详情 →</span></div>
         </a>
       </div>
-      <p class="catalog-note">这里将继续收录 KNOWHY 的新游戏。每款游戏都有独立介绍页。</p>
+      <p class="catalog-note" data-i18n="catalogNote">今后有新作品，也会加入这里；每款游戏都有自己的介绍和游玩入口。</p>
     </section>
     <section id="studio" class="studio">
-      <div class="studio-inner"><p class="kicker">[ 关于本站 ]</p><h2>每个游戏，都有自己的下一步。</h2><p class="studio-text">这里是 KNOWHY 的游戏作品目录。游戏详情、玩法说明和平台入口集中在各自的介绍页；游玩由相应游戏平台提供。</p></div>
+      <div class="studio-inner"><p class="kicker" data-i18n="aboutKicker">关于本站</p><div class="studio-row"><h2 data-i18n="aboutTitle">这里收着我们的游戏。</h2><p class="studio-text" data-i18n="aboutBody">在这里了解作品，再通过对应平台游玩。本站是游戏目录，不直接提供在线游戏。</p></div></div>
     </section>
   </main>
-  <footer class="footer"><p class="foot-brand">KNOWHY GAMES</p><div class="foot-bottom"><span>© 2026 KNOWHY GAMES</span><span><a href="https://knowhy.net/">返回 KNOWHY</a></span></div></footer>
+  <footer class="footer"><div class="foot-bottom"><strong>KNOWHY GAMES</strong><span>© 2026 KNOWHY GAMES</span><a href="https://knowhy.net/" data-i18n="footerBack">返回 KNOWHY</a></div></footer>
   <script type="module" src="./main.js"></script>
 </body>
 </html>
