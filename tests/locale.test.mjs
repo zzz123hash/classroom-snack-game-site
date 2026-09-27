@@ -50,3 +50,13 @@ test('catalog promotes discovery, not the game scoreboard', () => {
   assert.doesNotMatch(home, /class="hero-art"|class="game game-feature"/);
   assert.match(home, /class="game-card"/);
 });
+
+test('static page copy starts in English before localization runs', () => {
+  const root = dirname(fileURLToPath(import.meta.url));
+  for (const path of [join(root, '..', 'index.html'), join(root, '..', 'classroom-snacks', 'index.html')]) {
+    const html = readFileSync(path, 'utf8');
+    for (const match of html.matchAll(/<([a-z][\w-]*)\b[^>]*\bdata-i18n="([^"]+)"[^>]*>([^<]*)<\/\1>/gi)) {
+      assert.equal(match[3], translations.en[match[2]], `${path}:${match[2]}`);
+    }
+  }
+});
