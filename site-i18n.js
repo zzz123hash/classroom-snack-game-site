@@ -15,6 +15,7 @@ export function onLocaleChange(listener) {
 
 function applyLocale() {
   document.documentElement.lang = locale;
+  document.documentElement.dataset.localeReady = 'true';
   document.title = t(document.body.dataset.page === 'detail' ? 'detailTitleMeta' : 'homeTitleMeta');
   document.querySelector('meta[name="description"]')?.setAttribute('content', t(document.body.dataset.page === 'detail' ? 'detailDescriptionMeta' : 'homeDescriptionMeta'));
   document.querySelectorAll('[data-i18n]').forEach((node) => { node.textContent = t(node.dataset.i18n); });
