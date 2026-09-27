@@ -2,7 +2,7 @@
 
 This standalone static page describes the game and displays a four-tier endless playtest score table. It does not embed the playable game. The primary button links to the verified [itch.io game page](https://knowhy.itch.io/classroom-snacks). The existing public playtest links remain separate. `classroom.png` is a game screenshot, not an interactive frame.
 
-The page has no build step, runtime CDN, analytics, account or personal profile. `config.js` points to the verified HTTPS score Worker. When its API fails, the table shows an error instead of invented rows.
+The page has no build step, runtime CDN, analytics, account or personal profile. `config.js` points to the verified HTTPS score Worker. It reads the table on open, tier change or return to the tab rather than polling every 30 seconds. When its API fails, the table shows an error instead of invented rows.
 
 The production game area is `https://game.knowhy.net/`. Its header returns to the main Knowhy navigation page. The game itself remains on itch.io; the score table is a playtest board rather than a cheat-resistant competition ranking.
 
