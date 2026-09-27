@@ -8,4 +8,4 @@ Serve this directory with a local static server to check 390px and desktop layou
 
 ## Cloudflare Pages
 
-This directory can be uploaded directly as a static Pages project or imported from the independent GitHub repository `zzz123hash/classroom-snack-game-site` with no framework, no build command and the repository root as the output directory. The leaderboard API is an existing separate Worker; do not configure a game runtime or game source in Pages. Bind a custom subdomain only after its exact owned DNS zone has been confirmed.
+The independent GitHub repository `zzz123hash/classroom-snack-game-site` includes `wrangler.jsonc` and `.assetsignore`. From a clone of that repository, `npx wrangler deploy` uploads only `index.html`, `config.js` and `classroom.png` as Workers Static Assets. It needs no game bundle, framework or build command. The leaderboard API is an existing separate Worker. Bind a custom subdomain only after its exact owned DNS zone has been confirmed.
