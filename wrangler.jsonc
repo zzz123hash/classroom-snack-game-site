@@ -1,6 +1,10 @@
 {
   "name": "classroom-snack-game-site",
   "compatibility_date": "2026-09-27",
+  "workers_dev": true,
+  "routes": [
+    { "pattern": "game.knowhy.net", "custom_domain": true }
+  ],
   "assets": {
     "directory": "."
   }
