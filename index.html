@@ -1,6 +1,49 @@
 <!doctype html>
-<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#163a38"><meta name="description" content="KNOWHY GAMES 独立游戏作品目录。"><title>游戏作品 · KNOWHY GAMES</title><link rel="stylesheet" href="./style.css"></head>
-<body><header class="site-header"><div class="shell header-row"><a class="brand" href="./" aria-label="KNOWHY GAMES 首页"><span class="brand-mark" aria-hidden="true">K<span>✦</span></span><span>KNOWHY <b>GAMES</b></span></a><a class="header-link" href="https://knowhy.net/">返回 KNOWHY ↗</a></div></header>
-<main><section class="catalog-intro shell"><div><span class="kicker"><span class="kicker-dot"></span> INDEPENDENT GAMES · 作品目录</span><h1>一点点好奇心，<br><em>一局局新游戏。</em></h1><p>这里收录 KNOWHY 的游戏作品。挑一款感兴趣的，看看玩法与开发进展，再前往游戏平台体验。</p></div><div class="catalog-doodle" aria-hidden="true"><span class="doodle-star">✳</span><span class="doodle-card">PLAY<span>▷</span></span><span class="doodle-orbit"></span></div></section>
-<section class="catalog-section shell" aria-labelledby="games-heading"><div class="section-heading"><div><span class="section-index">01 / OUR GAMES</span><h2 id="games-heading">游戏作品</h2></div><span class="section-count">目前 01 款</span></div><div class="game-grid"><article class="game-card"><a class="game-card-link" href="./classroom-snacks/" aria-label="查看《课堂偷吃》游戏详情"><div class="game-card-art"><div class="art-halo" aria-hidden="true"></div><img src="./classroom.png" width="390" height="844" alt="《课堂偷吃》教室游玩画面" loading="lazy"><span class="card-corner" aria-hidden="true">↗</span></div><div class="game-card-body"><div class="card-meta"><span>轻策略 · 休闲</span><span>试玩中</span></div><h3>课堂偷吃</h3><p>趁老师转身，悄悄吃一口。选零食、看时机、藏住破绽。</p><span class="text-link">查看游戏详情 <span aria-hidden="true">→</span></span></div></a></article></div></section></main>
-<footer class="site-footer"><div class="shell footer-row"><span>KNOWHY GAMES</span><span>独立游戏作品目录 · <a href="https://knowhy.net/">knowhy.net</a></span></div></footer></body></html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="KNOWHY GAMES 的独立游戏作品目录。了解《课堂偷吃》的玩法，并前往游戏平台游玩。" />
+  <meta name="theme-color" content="#bfe9ff" />
+  <title>KNOWHY GAMES · 游戏作品</title>
+  <link rel="stylesheet" href="./styles.css" />
+  <script type="importmap">{ "imports": { "three": "./vendor/three.module.js" } }</script>
+</head>
+<body>
+  <canvas id="world" aria-hidden="true"></canvas>
+  <header class="nav">
+    <a class="brand" href="./">◆ KNOWHY GAMES</a>
+    <nav class="nav-links" aria-label="主导航">
+      <a href="#games">游戏作品</a>
+      <a href="#studio">关于</a>
+      <a href="https://knowhy.net/">KNOWHY ↗</a>
+      <button id="daynight" class="daynight" type="button" aria-label="切换昼夜外观">☀ 白天</button>
+    </nav>
+  </header>
+  <main>
+    <section class="hero">
+      <div class="hero-card">
+        <p class="eyebrow">一个放游戏的地方 · KNOWHY GAMES</p>
+        <h1 class="hero-title">下一局，<br>从这里开始。</h1>
+        <p class="hero-sub">我们把有趣的小想法做成能亲手体验的游戏。在这里认识作品，再前往游戏平台游玩。</p>
+        <div class="hero-actions"><a class="btn" href="#games">看看游戏 <span aria-hidden="true">↓</span></a><span class="hint">本站不内嵌游戏</span></div>
+      </div>
+    </section>
+    <section id="games" class="games">
+      <div class="section-head"><p class="kicker">[ 游戏作品 ]</p><h2>先来一局课堂偷吃</h2></div>
+      <div class="game-grid">
+        <a class="game game-feature" href="./classroom-snacks/" aria-label="查看《课堂偷吃》详情">
+          <div class="g-tile"><img src="./classroom.png" width="390" height="844" alt="《课堂偷吃》教室游玩画面" loading="lazy"></div>
+          <div class="game-copy"><span class="g-tag">单人 · 轻策略 · 试玩中</span><h3>课堂偷吃</h3><p>铃声响起，老师开始巡逻。挑零食、抓空档、及时收手，在下课前把肚子填饱。</p><span class="game-more">了解玩法与游玩入口 <span aria-hidden="true">→</span></span></div>
+        </a>
+      </div>
+      <p class="catalog-note">这里将继续收录 KNOWHY 的新游戏。每款游戏都有独立介绍页。</p>
+    </section>
+    <section id="studio" class="studio">
+      <div class="studio-inner"><p class="kicker">[ 关于本站 ]</p><h2>每个游戏，都有自己的下一步。</h2><p class="studio-text">这里是 KNOWHY 的游戏作品目录。游戏详情、玩法说明和平台入口集中在各自的介绍页；游玩由相应游戏平台提供。</p></div>
+    </section>
+  </main>
+  <footer class="footer"><p class="foot-brand">KNOWHY GAMES</p><div class="foot-bottom"><span>© 2026 KNOWHY GAMES</span><span><a href="https://knowhy.net/">返回 KNOWHY</a></span></div></footer>
+  <script type="module" src="./main.js"></script>
+</body>
+</html>
