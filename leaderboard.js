@@ -19,11 +19,6 @@ function renderPlaceholderRows() {
   }
 }
 
-function formatDuration(endTick) {
-  const seconds = Number.isFinite(endTick) ? Math.max(0, Math.floor(endTick / 60)) : 0;
-  return `${Math.floor(seconds / 60)}分${String(seconds % 60).padStart(2, '0')}秒`;
-}
-
 async function loadScores() {
   const id = ++requestId;
   renderPlaceholderRows();
@@ -48,7 +43,7 @@ async function loadScores() {
     scores.replaceChildren();
     data.rows.slice(0, 20).forEach((entry, index) => {
       const row = document.createElement('tr');
-      [String(index + 1).padStart(2, '0'), String(entry.score), formatDuration(entry.endTick)].forEach((value) => {
+      [String(index + 1).padStart(2, '0'), String(entry.displayName || '—'), String(entry.score)].forEach((value) => {
         const cell = document.createElement('td');
         cell.textContent = value;
         row.append(cell);
