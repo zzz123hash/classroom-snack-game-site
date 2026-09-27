@@ -4,7 +4,7 @@ const storageKey = 'knowhy.games.language';
 const listeners = new Set();
 let saved = null;
 try { saved = localStorage.getItem(storageKey); } catch { /* Private storage may be unavailable. */ }
-let locale = resolveLocale(saved, navigator.language);
+let locale = resolveLocale(saved);
 
 export function getLocale() { return locale; }
 export function t(key, params) { return translate(locale, key, params); }

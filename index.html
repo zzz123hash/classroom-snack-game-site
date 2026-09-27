@@ -1,11 +1,11 @@
 <!doctype html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="认识 KNOWHY GAMES 的独立游戏作品，了解《课堂偷吃》并选择游戏平台。" />
+  <meta name="description" content="Discover indie games from KNOWHY GAMES, explore Classroom Snacks, and find where to play." />
   <meta name="theme-color" content="#f4efe3" />
-  <title>KNOWHY GAMES · 游戏作品</title>
+  <title>KNOWHY GAMES · Indie games</title>
   <link rel="stylesheet" href="./styles.css" />
 </head>
 <body data-page="home">
@@ -15,7 +15,7 @@
       <a href="#games" data-i18n="navGames">游戏作品</a>
       <a href="#studio" data-i18n="navAbout">关于</a>
       <a class="nav-parent" href="https://knowhy.net/">KNOWHY ↗</a>
-      <label class="language-wrap"><span class="visually-hidden" data-i18n="navLanguage">网站语言</span><select class="language-select" data-language-select aria-label="网站语言" data-i18n-aria="navLanguage"><option value="zh-CN">中文</option><option value="en">English</option><option value="ja">日本語</option><option value="ko">한국어</option><option value="es">Español</option><option value="pt-BR">Português</option><option value="fr">Français</option><option value="de">Deutsch</option></select></label>
+      <label class="language-wrap"><span class="language-label">Language</span><select class="language-select" data-language-select aria-label="Website language" data-i18n-aria="navLanguage"><option value="zh-CN">中文</option><option value="en" selected>English</option><option value="ja">日本語</option><option value="ko">한국어</option><option value="es">Español</option><option value="pt-BR">Português</option><option value="fr">Français</option><option value="de">Deutsch</option></select></label>
       <button id="daynight" class="daynight" type="button" aria-label="切换昼夜外观" data-i18n-aria="themeDay">☀ 白天</button>
     </nav>
   </header>
@@ -23,21 +23,18 @@
     <section class="hero">
       <div class="hero-inner">
         <div class="hero-copy">
-          <p class="eyebrow" data-i18n="homeEyebrow">KNOWHY GAMES / 小游戏工作室</p>
-          <h1 class="hero-title" data-i18n="homeTitle">小小一局，玩出大动静。</h1>
-          <p class="hero-sub" data-i18n="homeLead">偷偷吃一口，留神老师的视线。每个收手的时机，都由你决定。</p>
-          <a class="btn" href="#games" data-i18n="homeExplore">看看游戏 ↓</a>
+          <p class="eyebrow" data-i18n="homeEyebrow">KNOWHY GAMES / small games, big ideas</p>
+          <h1 class="hero-title" data-i18n="homeTitle">Small games. Big moments.</h1>
+          <p class="hero-sub" data-i18n="homeLead">A growing collection of playful worlds. Find a game, learn its story, and choose where to play.</p>
+          <a class="btn" href="#games" data-i18n="homeExplore">Explore games ↓</a>
         </div>
-        <a class="hero-art" href="./classroom-snacks/" aria-label="查看《课堂偷吃》详情" data-i18n-aria="gameMore">
-          <img src="./menu-key-art-v1.png" width="944" height="1678" alt="《课堂偷吃》插画：学生在教室里偷偷吃零食" data-i18n-alt="homeImageAlt" fetchpriority="high" />
-          <span class="art-caption" data-i18n="homeArtCaption">本期作品 · 课堂偷吃</span>
-        </a>
+        <div class="hero-playfield" aria-hidden="true"><span class="playfield-orbit orbit-one"></span><span class="playfield-orbit orbit-two"></span><span class="playfield-tile tile-one">✦</span><span class="playfield-tile tile-two">◈</span><span class="playfield-tile tile-three">●</span><span class="playfield-spark spark-one">✳</span><span class="playfield-spark spark-two">✦</span></div>
       </div>
     </section>
     <section id="games" class="games">
-      <div class="section-head"><p class="kicker" data-i18n="gamesKicker">游戏作品</p><h2 data-i18n="gamesTitle">先认识这一款</h2></div>
+      <div class="section-head"><p class="kicker" data-i18n="gamesKicker">OUR GAMES</p><h2 data-i18n="gamesTitle">Explore the collection</h2></div>
       <div class="game-grid">
-        <a class="game game-feature" href="./classroom-snacks/" aria-label="查看《课堂偷吃》详情" data-i18n-aria="gameMore">
+        <a class="game-card" href="./classroom-snacks/" aria-label="View Classroom Snacks" data-i18n-aria="gameMore">
           <div class="g-tile"><img src="./classroom.png" width="390" height="844" alt="《课堂偷吃》的教室游玩画面" data-i18n-alt="detailImageAlt" loading="lazy"></div>
           <div class="game-copy"><span class="g-tag" data-i18n="gameTag">单人 · 轻策略 · 试玩中</span><h3 data-i18n="gameTitle">课堂偷吃</h3><p data-i18n="gameDescription">铃声响起，老师开始巡逻。挑零食、抓空档、及时收手，别让老师发现。</p><span class="game-more" data-i18n="gameMore">查看游戏详情 →</span></div>
         </a>
