@@ -8,6 +8,10 @@
 .detail-lead { max-width: 35ch; margin: 0; color: #526d6d; font-size: clamp(1.08rem, 1.65vw, 1.27rem); line-height: 1.75; }
 .detail-tags { display: flex; flex-wrap: wrap; gap: 8px; margin: 25px 0 30px; }
 .detail-tags span { padding: 6px 11px; border: 1px solid #ccd9d0; border-radius: 999px; background: #f8f8ee; color: #34594e; font-size: .79rem; font-weight: 800; }
+.play-links { display: flex; flex-wrap: wrap; gap: 10px; }
+.play-links .btn { text-decoration: none; }
+.play-links .btn-secondary { background: #fffefa; border: 1px solid #c9d6cd; color: #28544b; box-shadow: 0 9px 20px -14px #294c47; }
+.play-links .btn-secondary:hover { box-shadow: 0 15px 24px -14px #294c47; }
 .platform-note { max-width: 44ch; margin: 12px 0 0; color: #61767b; font-size: .82rem; }
 .detail-screen { position: relative; justify-self: center; width: min(100%, 322px); padding: 10px; border: 1px solid var(--line); border-radius: 24px; background: var(--paper-light); box-shadow: var(--shadow); }
 .detail-screen img { display: block; width: 100%; height: auto; border-radius: 15px; }

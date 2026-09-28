@@ -60,3 +60,14 @@ test('static page copy starts in English before localization runs', () => {
     }
   }
 });
+
+test('game detail offers both verified play platforms in every locale', () => {
+  const root = dirname(fileURLToPath(import.meta.url));
+  const detail = readFileSync(join(root, '..', 'classroom-snacks', 'index.html'), 'utf8');
+  assert.match(detail, /https:\/\/knowhy\.itch\.io\/classroom-snacks/);
+  assert.match(detail, /https:\/\/playgama\.ai\/play\/3tqjeyv6y7/);
+  assert.match(detail, /data-i18n="detailPlayPlaygama"/);
+  for (const locale of SUPPORTED_LOCALES) {
+    assert.match(translations[locale].detailPlayPlaygama, /Playgama/i, locale);
+  }
+});

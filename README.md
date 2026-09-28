@@ -2,7 +2,7 @@
 
 This static game catalog is adapted from [Formwork Isometria](https://github.com/shellcat-com/formwork-isometria) under its MIT license (`LICENSE`). The homepage uses a studio-level illustrated CSS banner and a compact, expandable game-card grid. The older licensed Three.js files remain in `vendor/` for source provenance and are excluded from static deployment assets.
 
-`/` introduces the studio's games. `/classroom-snacks/` describes Classroom Snacks and links to [itch.io](https://knowhy.itch.io/classroom-snacks). Gameplay and the score board are not embedded in the catalog; the game client and score Worker are separate.
+`/` introduces the studio's games. `/classroom-snacks/` describes Classroom Snacks and links to [itch.io](https://knowhy.itch.io/classroom-snacks) and [Playgama](https://playgama.ai/play/3tqjeyv6y7). Gameplay and the score board are not embedded in the catalog; the game client and score Worker are separate.
 
 Both routes support Simplified Chinese, English, Japanese, Korean, Spanish, Brazilian Portuguese, French, and German. The visible `Language` control persists an explicit choice in localStorage; without one, the site starts in English regardless of browser language. Page metadata and accessible labels use the same locale catalog.
 
