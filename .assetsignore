@@ -4,6 +4,6 @@ wrangler.jsonc
 .gitignore
 .git/**
 .wrangler/**
-.wrangler-dry-run/**
 tests/**
+scripts/**
 vendor/**
