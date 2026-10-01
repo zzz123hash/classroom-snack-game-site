@@ -120,8 +120,8 @@ const additionalReleaseCopy = {
   de: ['Spiel hochgeladen; Testanzeige abgeschlossen. Veröffentlichungsprüfung ausstehend.', 'Entwicklerzugang beantragt; Antwort ausstehend. Noch nicht veröffentlicht.']
 };
 for (const locale of SUPPORTED_LOCALES) {
-  const [releaseTitle, playgamaPlay, itchStatus, playgamaStatus, crazygamesStatus, taptapStatus] = releaseCopy[locale];
-  Object.assign(translations[locale], { releaseTitle, playgamaPlay, itchStatus, playgamaStatus, crazygamesStatus, taptapStatus });
+  const [releaseTitle, detailPlayPlaygama, itchStatus, playgamaStatus, crazygamesStatus, taptapStatus] = releaseCopy[locale];
+  Object.assign(translations[locale], { releaseTitle, detailPlayPlaygama, itchStatus, playgamaStatus, crazygamesStatus, taptapStatus });
   const [gamemonetizeStatus, pokiStatus] = additionalReleaseCopy[locale];
   Object.assign(translations[locale], { gamemonetizeStatus, pokiStatus });
 }
