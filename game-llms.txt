@@ -1,0 +1,13 @@
+# KNOWHY Games
+
+> KNOWHY 游戏作品目录：收录独立游戏作品与玩法介绍，点击前往 itch.io、Playgama 等平台游玩。
+
+## 收录游戏
+- Classroom Snacks（课堂偷吃）：单人潜行吃零食小游戏: https://game.knowhy.net/classroom-snacks/
+- 网站地图: https://game.knowhy.net/sitemap.xml
+
+## KNOWHY 系列站点
+- KNOWHY 主页（个人网络空间入口）: https://knowhy.net/
+- Knowhy Lab（中文 AI 资讯）: https://lab.knowhy.net/
+- Video Insight（视频解析与文稿整理）: https://parse.knowhy.net/
+- Reset Radar（Codex 额度重置追踪）: https://reset.knowhy.net/
